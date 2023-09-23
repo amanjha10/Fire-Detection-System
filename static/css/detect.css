@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    background:black;
+}
+.logo{
+    width: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.logo img{
+   width: 53%;
+   height: 30%;
+   border: 3px solid rgb(243, 82, 23);
+   border-radius: 50px;
+}
+.text-center{
+    text-align: center;
+    padding-top: 0px;
+    font-size: 35px;
+    color: orangered;
+    /* text-decoration: underline; */
+
+}
+.font a{
+    position: absolute;
+    border: 6px solid orangered;
+    width: 495px;
+    height: 425px;
+    margin-top: 25px;
+    margin-left: 437px;
+    
+}
+.font {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/detect.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="/static/image/g.jpg" alt="logo" height="200px">
+    </div>
+    <h2 class="text-center">Fire has been detected.</h2>
+
+    {% if video_feed %}
+    <div class="font">
+        <video id="fire-video" autoplay controls>
+            <source src="{{ image_path }}" type="video/mp4">
+        </video>
+    </div>
+    {% else %}
+    <div class="font">
+        <img id="fire-image" src="{{ image_path }}" alt="Fire Image">
+    </div>
+    {% endif %}
+
+    <script>
+        // Get the image or video path from the Flask route
+        const mediaPath = "{{ image_path }}";
+        
+        {% if video_feed %}
+        // Update the source of the video element
+        document.getElementById("fire-video").src = mediaPath;
+        {% else %}
+        // Update the src attribute of the image element
+        document.getElementById("fire-image").src = mediaPath;
+        {% endif %}
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Detection System</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+ 
+</head>
+<body>
+    <nav class="navbar background h-nav-resp ">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="/static/image/g.jpg" alt="logo" height="200px"></div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Contact">Contact us</a></li>
+        </ul>
+        <div class="rightnav v-class-resp">
+            <input type="text" name="Search" id="Search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <section class="background home" id="home">
+        <div class="box-main">
+            <div class="firsthalf">
+                <p class="text-big" >Every seconds count in fire</p>
+                <p class="text-small">Welcome to our website dedicated to fire safety and personal survival strategies during a fire emergency.</p>
+                <div class="button">
+                    <form action="/" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file">
+                        <button type="submit">Upload</button>
+                    </form>
+                
+                
+                {% if upload %}
+                    <img src="{{ url_for('static', filename=upload) }}" alt="Uploaded Image" width="500" height="500">
+                {% endif %}
+                {% if image_path %}
+                
+                    {% if image_path == "No detection" %}
+                        <p>No detection</p>
+                    {% else %}
+                    <div class="image-frame">
+                        <img src="{{ url_for('display', filename=image_path) }}" alt="Result Image" width="500" height="500">
+                    </div>
+                    {% endif %}
+                {% endif %}
+                </div>
+            </div>
+            <div class="secondhalf">
+                <img src="/static/image/g.jpg" alt="Fire image">
+            </div>
+           
+        </div>
+          
+    </section>
+    <section class="About" id="About">
+        <h2 class="text-center">About</h2>
+        <div class="paras">
+        <!-- <p class="sectionTag text-big">.</p> -->
+        <p class="sectionSubtag text-small">Fire detection systems are designed to discover fires early in their development when time will still be available for the safe evacuation of occupants. Early detection also plays a significant role in protecting the safety of emergency response personnel. Property loss can be reduced and downtime for the operation minimized through early detection because control efforts are started while the fire is still small. Most alarm systems provide information to emergency responders on the location of the fire, speeding the process of fire control. 
+            <br>
+            To be useful, detectors must be coupled with alarms. Alarm systems provide notice to at least the building occupants and usually transmit a signal to a staffed monitoring station either on or off site. In some cases, alarms may go directly to the fire department, although in most locations this is no longer the typical approach.
+            <br>These systems have numerous advantages as discussed above. The one major limitation is that they do nothing to contain or control the fire. Suppression systems such as automatic sprinklers act to control the fire. They also provide notification that they are operating, so they can fill the role of a heat detection-based system if connected to notification appliances throughout the building. They will not, however, operate as quickly as a smoke detection system. This is why facilities where rapid notice is essential, even when equipped with sprinklers, still need detection and alarm systems.
+        </p>
+        </div>
+         <div class="thumb">
+            <!-- <h2 class="text-center">Follow This</h2> -->
+           <!-- <img src="about.png" alt="" class="imgfluid"> -->
+         </div>   
+    </section>
+    <section class="section" id="Services">
+        <!-- <h2 class="text-center">Services</h2> -->
+        <div class="paras">
+        <p class="sectionTag text-big">Ensure fire safety, save life save property.</p>
+        <p class="sectionSubtag text-small">Our mission is to provide valuable information and resources that can help you protect yourself and others from the dangers of fire.Lorem ipsum dolor sit amet consectetur adipisiue ut voluptatibus voluptates, temporibus id quis asperiores ipsam vitae commodi, ullam, veritatis quas nemo eaque explicabo.
+        </p>
+        </div>
+         <div class="thumbnail">
+            <img src="/static/image/home.webp" alt="" class="imgfluid">
+         </div>   
+    </section>
+    <section class="section section-left">
+        <div class="paras">
+        <p class="sectionTag text-big">Fire Kills, You can prevent it.</p>
+        <p class="sectionSubtag text-small">To prevent fires, there are several measures that can be taken. First and foremost, installing and maintaining smoke detectors throughout your home or building is crucial. These devices provide early detection and alert you to potential fires, allowing for timely response. Additionally, practicing proper electrical safety is essential</p>
+        </div>
+         <div class="thumbnail">
+            <img src="/static/image/prevents.jpg" alt="" class="imgfluid">
+         </div>   
+    </section>
+    <section class="section">
+        <div class="paras">
+        <p class="sectionTag text-big">We serve to save.</p>
+        <p class="sectionSubtag text-small">Fire safety is of paramount importance in ensuring the well-being of individuals and the protection of properties. Several key measures can be taken to promote fire safety. First and foremost, the installation and regular maintenance of smoke detectors throughout homes and buildings are crucial. These devices serve as early warning systems, alerting occupants to the presence of smoke or fire and enabling prompt action</p>
+        </div>
+         <div class="thumbnail">
+            <img src="static/image/safe.jpg" alt="" class="imgfluid">
+         </div>   
+        
+    </section>
+
+    <section class="contact " id="Contact">
+        <h2 class="text-center">Contact Us</h2>
+        <div class="form">
+        <input class="form-input" type="text" name="Name" id="Name" placeholder="Enter your name">
+        <input class="form-input" type="text" name="Phone" id="Phone" placeholder="Enter your phone">
+        <input class="form-input"  type="text" name="Email" id="Email" placeholder="Enter your Email">
+        <textarea class="form-input"  name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your Concern"></textarea>
+        <button class="btn btn-dark">Submit</button>
+        </div>
+    </section>
+    <footer class="background1">
+        <p class="text-footer">
+            Copyright &copy;2030 -www.firedetectionsystem.com- All rights reserved
+        </p>
+    </footer>
+    <script src="/static/js/j.js"></script>
+</body>
+</html>
