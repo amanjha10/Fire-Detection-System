@@ -60,10 +60,10 @@ def get_location(ip_address):
 # Email Configuration
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-SMTP_USERNAME = 'amanjha3232@gmail.com'
-SMTP_PASSWORD = 'mssycmefkopcryrv'
-SENDER_EMAIL = 'amanjha3232@gmail.com'
-RECIPIENT_EMAIL = 'mathtrigo3@gmail.com'
+SMTP_USERNAME = 'Your email address'
+SMTP_PASSWORD = '*************'
+SENDER_EMAIL = 'Your email address'
+RECIPIENT_EMAIL = 'Reciever email address'
 
 @app.route('/<path:filename>')
 def display(filename):
